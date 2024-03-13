@@ -1,0 +1,11 @@
+received = conn.recv(BUFFER_SIZE).decode()
+    filename, filesize = received.split(SEPARATOR)
+    filename = os.path.basename(filename)
+    filesize = int(filesize)
+    # Dosyanın kaydedileceği konumu belirle
+    download_path = os.path.join('/Users/aysegulakkaya/PycharmProjects/BilgisayarAgProgramlama/datasciemce', filename)
+    with open(filename, 'wb') as f:
+        while filesize > 0:
+            bytes_read = conn.recv(BUFFER_SIZE)
+            f.write(bytes_read)
+            filesize -= len(bytes_read)

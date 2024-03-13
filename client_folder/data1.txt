@@ -1,0 +1,4 @@
+/* elif choice == "5":
+            filename = input("Enter file name to send: ")
+            cipher_algo = input("Choose encryption algorithm (AES, DES, Blowfish, or NONE for no encryption): ").upper()
+            send_file(filename, cipher_algo)
